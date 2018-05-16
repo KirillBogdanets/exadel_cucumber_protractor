@@ -1,0 +1,22 @@
+{
+  "name": "exadel_cucumber_protractor_framework",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "update": "webdriver-manager update",
+    "e2e": "protractor protractor.config.js --tag",
+    "pre-e2e": "start cmd /k webdriver-manager start"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^3.2.1",
+    "protractor": "^5.3.0",
+    "protractor-cucumber-framework": "^4.2.0",
+    "yargs": "^9.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "cucumber-html-reporter": "2.0.3"
+  }
+}

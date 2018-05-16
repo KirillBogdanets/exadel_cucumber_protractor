@@ -1,0 +1,11 @@
+# Webstorm/Idea config files
+.idea
+*.iml
+.vscode/
+node_modules/
+cucumber.json
+cucumber_report.html
+npm-debug.log
+package-lock.json
+output
+cucumber_report.html.json
