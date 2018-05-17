@@ -22,23 +22,14 @@ exports.config = {
     //     'ignoreProtectedModeSettings': true
     // }],
 
-    // seleniumAddress: 'http://localhost:4723/wd/hub',          //
-    // baseUrl: 'http://localhost:8000',                         //
-    // capabilities: {                                           //
-    //     browserName: 'chrome',                                //
-    //     platformName: 'Android',                              //   You need to comment that if you want to run non-mobile e2e tests
-    //     platformVersion: '5.1',                               //
-    //     deviceName: 'MX4',                                    //
-    // },
-
     specs: [
         './features/**.feature'
     ],
     // restartBrowserBetweenTests: true,
-    onPrepare: function () {
-        browser.ignoreSynchronization = true;
+    // onPrepare: function () {
+        // browser.ignoreSynchronization = true;
         // browser.driver.manage().window().maximize();  
-    },
+    // },
     onComplete: function () {
         let options = {
             theme: 'bootstrap',
@@ -68,7 +59,7 @@ exports.config = {
     },
     cucumberOpts: {
         require: path.resolve('./step_definitions/**.js'),
-        tags: [`${yargs.tag}`],
+        tags: [`${yargs.tag||"@smoke"}`],
         ignoreUncaughtExceptions: true,
         format: ['json:output/cucumber.json']
     },

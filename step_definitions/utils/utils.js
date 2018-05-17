@@ -85,12 +85,6 @@ const textRememberer = async (element, saveAs) => {
     MemoryObject.setter(saveAs, text);
 };
 
-const collectionTextWorker = async (number, collection, givenText) => {
-    const text = await parser.parser(collection)[`${parseFloat(number) - 1}`].getText();
-
-    return expect(text).to.equal(givenText);
-};
-
 const collectionComparingTextsWorker = (array, givenText, expected) => {
     switch (expected) {
         case "equal to":
@@ -107,6 +101,5 @@ module.exports = {
     scrollToTheElementHelper,
     isTextsEquals,
     textRememberer,
-    collectionTextWorker,
     collectionComparingTextsWorker
 };

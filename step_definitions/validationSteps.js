@@ -35,10 +35,6 @@ Then(/^Text of "([^"]*)" element should be equal to "([^"]*)"( ignoring case)?$/
     return utils.isTextsEquals(element, givenText, ignoringCase);
 });
 
-Then(/^Text of #"([^"]*)" element of "([^"]*)" collection should be equal to "([^"]*)"$/, (number, collection, givenText) => {
-    return utils.collectionTextWorker(number, collection, givenText);
-});
-
 Then(/^I wait until "([^"]*)" element is visible$/, (element) => {
     return utils.visibilityOf(element);
 });

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "update": "webdriver-manager update",
-    "e2e": "protractor protractor.config.js --tag",
+    "e2e": "protractor protractor.config.js",
     "pre-e2e": "start cmd /k webdriver-manager start"
   },
   "dependencies": {
