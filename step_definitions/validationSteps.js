@@ -40,7 +40,7 @@ Then(/^I wait until "([^"]*)" element is visible$/, (element) => {
 });
 
 Then(/^Page URL should contain "([^"]*)"$/, async (givenUrl) => {
-    const utl = await browser.getCurrentUrl();
+    const url = await browser.getCurrentUrl();
 
     return expect(url).to.include(givenUrl);
 });
