@@ -31,9 +31,9 @@ const isInViewPort = async (element, shouldNotBe) => {
 const textHelper = (firstValue, expected, secondValue) => {
     switch (expected) {
         case "different then":
-            return expect(MemoryObject.getter(firstValue).to.not.equal(MemoryObject.getter(secondValue), `${MemoryObject.getter(firstValue)} is equal to the ${MemoryObject.getter(secondValue)}`));
+            return expect(MemoryObject.getter(firstValue), `${MemoryObject.getter(firstValue)} is equal to the ${MemoryObject.getter(secondValue)}`).to.not.equal(MemoryObject.getter(secondValue));
         case "equal to":
-            return expect(MemoryObject.getter(firstValue)).to.equal(MemoryObject.getter(secondValue), `${MemoryObject.getter(firstValue)} is not equal to the ${MemoryObject.getter(secondValue)}`);
+            return expect(MemoryObject.getter(firstValue), `${MemoryObject.getter(firstValue)} is not equal to the ${MemoryObject.getter(secondValue)}`).to.equal(MemoryObject.getter(secondValue));
     }
 };
 
