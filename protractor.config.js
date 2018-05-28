@@ -12,6 +12,9 @@ exports.config = {
         browserName: 'chrome',
         shardTestFiles: false,
         maxInstances: 2,
+        // chromeOptions: {
+        //     args: ["--headless", "--window-size=1280x800"]
+        // },
         version: "66.0.3359.139"
     },
     // multiCapabilities: [{
@@ -28,7 +31,7 @@ exports.config = {
     // restartBrowserBetweenTests: true,
     // onPrepare: function () {
         // browser.ignoreSynchronization = true;
-        // browser.driver.manage().window().maximize();  
+        // browser.driver.manage().window().maximize(); 
     // },
     onComplete: function () {
         let options = {
