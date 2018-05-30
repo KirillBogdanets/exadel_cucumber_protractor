@@ -5,7 +5,7 @@
   "scripts": {
     "update": "webdriver-manager update",
     "e2e": "protractor protractor.config.js",
-    "pre-e2e": "start cmd /k webdriver-manager start"
+    "pre-e2e": "webdriver-manager start"
   },
   "dependencies": {
     "chai": "^4.1.2",

@@ -11,7 +11,7 @@ Feature: Header
         Then Element "HomePage > Header > HeaderLogo" should be visible
           And Element "HomePage > Header > ServicesButton" should be visible
           And Element "HomePage > Header > OurWorkButton" should be visible
-          And Element "HomePage > Header > AboutButton" should not be visible
+          And Element "HomePage > Header > AboutButton" should be visible
           And Element "HomePage > Header > NewsButton" should be visible
           And Element "HomePage > Header > ContactButton" should be visible
           And Element "HomePage > Header > CallUsNumber" should be visible

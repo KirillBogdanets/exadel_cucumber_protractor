@@ -10,7 +10,7 @@ exports.config = {
     baseUrl: 'https://exadel.com/',
     capabilities: {
         browserName: 'chrome',
-        shardTestFiles: false,
+        shardTestFiles: true,
         maxInstances: 2,
         // chromeOptions: {
         //     args: ["--headless", "--window-size=1280x800"]
@@ -21,8 +21,7 @@ exports.config = {
     //     browserName: 'chrome',
     //     version: "66.0.3359.139"
     // }, {
-    //     browserName: 'internet explorer',
-    //     'ignoreProtectedModeSettings': true
+    //     browserName: 'firefox'
     // }],
 
     specs: [
@@ -36,8 +35,8 @@ exports.config = {
     onComplete: function () {
         let options = {
             theme: 'bootstrap',
-            // jsonDir: './output',
-            jsonFile: './output/cucumber.json',
+            jsonDir: './output',
+            // jsonFile: './output/cucumber.json',
             output: './cucumber_report.html',
             reportSuiteAsScenarios: true,
             launchReport: true,
