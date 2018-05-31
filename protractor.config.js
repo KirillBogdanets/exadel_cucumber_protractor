@@ -10,7 +10,7 @@ exports.config = {
     baseUrl: 'https://exadel.com/',
     capabilities: {
         browserName: 'chrome',
-        shardTestFiles: true,
+        shardTestFiles: false,
         maxInstances: 2,
         // chromeOptions: {
         //     args: ["--headless", "--window-size=1280x800"]
@@ -32,7 +32,7 @@ exports.config = {
         // browser.ignoreSynchronization = true;
         // browser.driver.manage().window().maximize(); 
     // },
-    onComplete: function () {
+    afterLaunch: function () {
         let options = {
             theme: 'bootstrap',
             jsonDir: './output',
