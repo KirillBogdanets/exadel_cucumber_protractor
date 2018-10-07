@@ -8,7 +8,7 @@ class HomePage extends BasePage{
 
         this.ExadelBlock = element(by.css(".et_pb_section:nth-child(1)"));
         this.ExadelInfo = this.ExadelBlock.element(by.css('.header-content p'));
-        this.ClientsFeedBacksLink = this.ExadelBlock.element(by.css('.et_pb_more_button'));
+        this.SpeakWithExpertsLink = this.ExadelBlock.element(by.css('.et_pb_more_button'));
 
         this.ServicesBlock = element(by.css(".et_pb_section:nth-child(2)"));
         this.ViewAllServisesLink = this.ServicesBlock.element(by.css('.our-services-btn'));
@@ -27,7 +27,7 @@ class HomePage extends BasePage{
         this.ClientsLogos = this.ClientslogoBlock.$$('img');
 
         this.ContactUsBlock = element(by.css(".et_pb_section:nth-child(6)"));
-        this.ContactUsLink = this.ContactUsBlock.element(by.css('.et_pb_button'));
+        this.ContactUsLink = this.ContactUsBlock.element(by.css('.cta-panel__btn'));
 	};
 }
 

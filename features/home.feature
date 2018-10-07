@@ -10,7 +10,7 @@ Feature: Home Page
     Scenario: Verify that user is able to see all necessary blocks on the Home Page while scrolling down
         Then Element "HomePage > ExadelBlock" should be visible
           And "HomePage > ExadelInfo" element should be in viewport
-          And "HomePage > ClientsFeedBacksLink" element should be in viewport
+          And "HomePage > SpeakWithExpertsLink" element should be in viewport
         When I scroll to the "HomePage > ServicesBlock" element
         Then "HomePage > ViewAllServisesLink" element should be in viewport
           And "HomePage > #1 of ServiceImages" element should be in viewport

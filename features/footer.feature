@@ -8,11 +8,18 @@ Feature: Footer
     @smoke
     @ticket_04
     Scenario: Verify that user is able to see all necessary elements at the Footer on Home Page
-    Then I scroll to the "HomePage > Footer > Services" element
-        And Element "HomePage > Footer > Services" should be visible
+        Then I scroll to the "HomePage > Footer > Solutions" element
+        And Element "HomePage > Footer > Solutions" should be visible
           And Element "HomePage > Footer > OurWork" should be visible
           And Element "HomePage > Footer > About" should be visible
           And Element "HomePage > Footer > News" should be visible
+        When I sleep 5 seconds
+        Then News Items list "HomePage > Footer > NewsItems" contains values:
+            |Breaking News  |
+            |Events         |
+            |Blog           |
+
+
 
     @smoke
     @ticket_05
@@ -23,10 +30,10 @@ Feature: Footer
         
         Examples:
             | Footer Dropdown Items    | Number of Items    | Footer Tables      |
-            | ServicesItems            | 6                  | Services           |
+            | SolutionsItems           | 9                  | Solutions          |
             | OurWorkItems             | 6                  | OurWork            |
             | AboutItems               | 4                  | About              |
-            | NewsItems                | 2                  | News               | 
+            | NewsItems                | 3                  | News               | 
 
     @smoke
     @ticket_06
@@ -39,7 +46,7 @@ Feature: Footer
         
         Examples:
             | Header Dropdown Items    | Item #      | Header Buttons     | Footer Dropdown Items    | Footer Tables      |
-            | ServicesDropdownItems    | 3           | ServicesButton     | ServicesItems            | Services           |
+            | SolutionsDropdownItems   | 3           | SolutionButton     | SolutionsItems           | Solutions          |
             | OurWorkDropdownItems     | 5           | OurWorkButton      | OurWorkItems             | OurWork            |
             | AboutDropdownItems       | 2           | AboutButton        | AboutItems               | About              |
             | NewsDropdownItems        | 2           | NewsButton         | NewsItems                | News               |        

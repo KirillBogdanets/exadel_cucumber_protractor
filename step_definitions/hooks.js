@@ -5,7 +5,7 @@ let {setDefaultTimeout} = require('cucumber');
 setDefaultTimeout(60 * 1000);
 const fs = require('fs');
 
-Before({tags: "@smoke"}, async () => {
+Before("@smoke", async () => {
     await browser.manage().deleteAllCookies();
     browser.ignoreSynchronization = true;
     browser.driver.manage().window().maximize(); 

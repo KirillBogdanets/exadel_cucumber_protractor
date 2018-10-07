@@ -1,6 +1,9 @@
 'use strict';
 
-const expect = require('chai').expect;
+const chai = require('chai');
+const chaiAsPromise = require("chai-as-promised");
+chai.use(chaiAsPromise);
+const expect = chai.expect;
 const world = require('../po/world');
 const utils = require("./utils/utils");
 const EC = protractor.ExpectedConditions;
@@ -19,8 +22,8 @@ Then(/^(Element|Collection) "([^"]*)" should (not )?be (present|clickable|visibl
     const CUSTOM_TIMEOUT = 15 * 1000;
 
     if (elementOrCollection === "Collection") {
-        await element.each(elem => {
-            return browser.wait(utils.ECHelper(elem, validation, negate), CUSTOM_TIMEOUT, `${elementOrCollection} ${alias} is${negate ? "" : " not"} ${validation}`);
+        await element.each(async elem => {
+            return await browser.wait(utils.ECHelper(elem, validation, negate), CUSTOM_TIMEOUT, `${elementOrCollection} ${alias} is${negate ? "" : " not"} ${validation}`);
         });
     } else {
         return await browser.wait(utils.ECHelper(element, validation, negate), CUSTOM_TIMEOUT, `${elementOrCollection} ${alias} is${negate ? "" : " not"} ${validation}`);
@@ -76,4 +79,11 @@ Then(/^Each element of "([^"]*)" collection should (be equal|contain) "([^"]*)" 
     return givenText.includes("$") ?
         expect(utils.collectionComparingTextsWorker(texts, MemoryObject.getter(givenText.replace("$", "")), expected), `Not every element from ${texts} collection ${expected} ${MemoryObject.getter(givenText.replace("$", ""))}`).to.be.true :
         expect(utils.collectionComparingTextsWorker(texts, givenText, expected), `Not every element from ${texts} collection ${expected} ${givenText}`).to.be.true;
+});
+
+Then('{detail} list {cssText} contains values:', async (_, elements, expected) => {
+    expected = expected.raw();
+    const actual = elements.map(element => [element]);
+
+    return expect(actual).to.deep.equal(expected);
 });

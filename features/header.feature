@@ -9,7 +9,7 @@ Feature: Header
     @ticket_01
     Scenario: Verify that user is able to see all necessary elements at the Header on Home Page
         Then Element "HomePage > Header > HeaderLogo" should be visible
-          And Element "HomePage > Header > ServicesButton" should be visible
+          And Element "HomePage > Header > SolutionButton" should be visible
           And Element "HomePage > Header > OurWorkButton" should be visible
           And Element "HomePage > Header > AboutButton" should be visible
           And Element "HomePage > Header > NewsButton" should be visible
@@ -26,10 +26,10 @@ Feature: Header
         
         Examples:
             | Header Dropdown Items    | Number of Items    | Header Buttons     |
-            | ServicesDropdownItems    | 6                  | ServicesButton     |
+            | SolutionsDropdownItems   | 9                  | SolutionButton     |
             | OurWorkDropdownItems     | 6                  | OurWorkButton      |
             | AboutDropdownItems       | 4                  | AboutButton        |
-            | NewsDropdownItems        | 2                  | NewsButton         |
+            | NewsDropdownItems        | 3                  | NewsButton         |
             
     @smoke
     @ticket_03

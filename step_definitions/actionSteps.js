@@ -14,6 +14,11 @@ Then(/^I wait (\d+) seconds$/, (number) => {
     return browser.sleep(Math.floor(seconds * 1000));
 });
 
+Then('I sleep {int} second(s)', (number) => {
+    let seconds = parseFloat(number);
+    return browser.sleep(Math.floor(seconds * 1000));
+});
+
 Then(/^I enter "([^"]*)" text into "([^"]*)" element$/, (givenText, element) => {
     return parser.parser(element).sendKeys(givenText);
 });
