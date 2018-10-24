@@ -8,7 +8,7 @@ const fs = require('fs');
 Before("@smoke", async () => {
     await browser.manage().deleteAllCookies();
     browser.ignoreSynchronization = true;
-    browser.driver.manage().window().maximize(); 
+    //browser.driver.manage().window().maximize(); 
     await browser.get(browser.baseUrl);
 });
 

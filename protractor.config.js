@@ -10,11 +10,11 @@ exports.config = {
     baseUrl: 'https://exadel.com/',
     capabilities: {
         browserName: 'chrome',
-        shardTestFiles: false,
-        maxInstances: 2,
-        // chromeOptions: {
-        //     args: ["--headless", "--window-size=1280x800"]
-        // },
+        // shardTestFiles: false,
+        // maxInstances: 2,
+        chromeOptions: {
+            args: ["window-size=1920,1080"]
+        },
         version: "66.0.3359.139"
     },
     // multiCapabilities: [{

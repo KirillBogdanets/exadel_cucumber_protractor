@@ -37,7 +37,6 @@ defineParameterType({
     name: 'cssText',
     useForSnippets: true,
     transformer: async function (givenValue) {
-        console.log(givenValue);
         const element = parser.parser(givenValue);
         return await element.getText();
     }
